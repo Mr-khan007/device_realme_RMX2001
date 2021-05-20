@@ -22,14 +22,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/realme/RMX2001/device.mk)
 
 # Inherit some common Evolution X stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+$(call inherit-product, vendor/kangos/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := octavi_RMX2001
-PRODUCT_DEVICE := RMX2001
+PRODUCT_NAME := kangos_RMX2001
+PRODUCT_DEVICE := RMX2151
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := Realme G90T Series
+PRODUCT_MODEL := Realme G95 Series
 PRODUCT_MANUFACTURER := realme
+
+# Kangos Properties
+KANGOS_BUILDTYPE := UNOFFICIAL 
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.kangos.maintainer=Mr-Khan007 \
+  ro.kangos.cpu=Helio G95
+
+USE_GAPPS := true
+TARGET_INCLUDE_AOSP_REPLACEMENT := true
 
 # Build info
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
